@@ -42,21 +42,22 @@ lof: true
 #Background page
 page-background: "img/bg/pages_background.pdf"
 ---
-## Références générales
+
+# Références générales
 
 | Références | DAT                               |
 | ---------- | --------------------------------- |
 | Type       | Document d'architecture technique |
 | Diffusion  | Confidentiel                      |
 
-### Historique du document
+## Historique du document
 
 | Historique |         |             |                  |
 | ---------- | ------- | ----------- | ---------------- |
 | Date       | Version | Description | Auteur           |
 | 17/04/2025 | 0.1     | Création    | Fabien CHEVALIER |
 
-### Objectif du document
+## Objectif du document
 
 Ce document technique regroupe l’ensemble des informations concernant la **l'infrastructure hébergeant l'application AudioProthèse+**. Il a pour objectif de spécifier l’ensemble des mécanismes techniques, des logiciels et des matériels qui sont mis en place dans le cadre de la livraison de la plateforme.
 
@@ -65,4 +66,3 @@ L'infrastructure présentée est la version 1.0 de l'architecture technique de l
 :::
 
 \newpage
-

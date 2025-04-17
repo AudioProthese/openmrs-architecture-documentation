@@ -1,1 +1,0 @@
-pandoc "src/DAT_Gouvernance.md" -o "outputs/DAT_Gouvernance.pdf" --from markdown --template "template/eisvogel.latex" --filter pandoc-latex-environment --listings

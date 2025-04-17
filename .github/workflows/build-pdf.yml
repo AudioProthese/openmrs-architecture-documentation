@@ -1,0 +1,35 @@
+name: Build PDF
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: src/**, build.sh
+
+
+
+jobs:
+  build_pdf:
+    runs-on: ubuntu-latest
+    container:
+      image: pandoc/latex:latest
+      options: --user root
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: |
+          apt-get update
+          apt-get install -y lua5.3 luarocks
+          luarocks install pandoc-latex-environment
+
+      - name: Generate PDF
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: TAD_Template.pdf
+          path: output/TAD_Template.pdf
