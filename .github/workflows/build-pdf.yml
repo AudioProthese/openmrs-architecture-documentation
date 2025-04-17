@@ -27,9 +27,9 @@ jobs:
                 --listings
                 --verbose
                 -o output/TAD_Template.pdf
-                
+
       - name: Upload PDF artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: TAD_Template.pdf
           path: output/TAD_Template.pdf
