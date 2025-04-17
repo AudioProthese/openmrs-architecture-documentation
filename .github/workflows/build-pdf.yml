@@ -12,24 +12,22 @@ on:
 jobs:
   build_pdf:
     runs-on: ubuntu-latest
-    container:
-      image: pandoc/latex:latest
-      options: --user root
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install dependencies
-        run: |
-          apt-get update
-          apt-get install -y lua5.3 luarocks
-          luarocks install pandoc-latex-environment
-
       - name: Generate PDF
-        run: |
-          chmod +x build.sh
-          ./build.sh
-
+        uses: docker://pandoc/extra:3.6.4.0
+        with:
+            args: >-
+                src/TAD_Template.md
+                --from markdown
+                --template template/eisvogel.latex
+                --filter pandoc-latex-environment
+                --listings
+                --verbose
+                -o output/TAD_Template.pdf
+                
       - name: Upload PDF artifact
         uses: actions/upload-artifact@v3
         with:
