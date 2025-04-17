@@ -1,95 +1,48 @@
 # Dossier Architecture Technique
 
-<img src="icon.png" align="right" height="110"/>
+<img src="https://raw.githubusercontent.com/AudioProthese/.github/refs/heads/main/profile/icon.jpeg" align="right" height="110"/>
 
-*Based on [https://github.com/Wandmalfarbe/pandoc-latex-template](Eisvogel) project*
+![LaTeX Version](https://img.shields.io/badge/latex-v2014-008080?logo=latex)
+![pandoc Version](https://img.shields.io/badge/pandoc-3.6.4-0266CC?logo=pandoc)
 
 - [Dossier Architecture Technique](#dossier-architecture-technique)
-  - [MacOS](#macos)
-  - [Windows](#windows)
-  - [Comment utiliser le template](#comment-utiliser-le-template)
-    - [Makdown](#makdown)
-    - [Lancer un export du document](#lancer-un-export-du-document)
+  - [Description](#description)
+  - [Prérequis](#prérequis)
+  - [Génération du document](#génération-du-document)
+  - [Edition du contenu](#edition-du-contenu)
 
-## MacOS
 
-```bash
-#Install dependencies
-brew install --cask mactex
-brew install pip
-pip install pandoc-latex-environment
+## Description
 
-# update tlmgr and packages
-sudo tlmgr update --self
+Ce dépôt contient le modèle de document d'architecture technique (TAD) pour l'application AudioProthèse+. Ce modèle est conçu pour être utilisé avec `pandoc` et `LaTeX`, et il est basé sur le format Markdown.
 
-#MD -> .pdf
-./build.sh
-```
+Éditer le fichier `src/TAD_Template.md` pour changer le contenu du document. Au commit, la CI/CD se charge de générer le document au format PDF et est récupérable 
 
-## Windows
+## Prérequis
 
-- Télécharger et installer Pandoc : <https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-windows-x86_64.msi>
-- Télécharger et installer Python : <https://www.python.org/>
-- Télécharger et installer MikTeX : <https://miktex.org/download>
+Pour générer ce document localement, vous devez avoir installé les outils suivants :
 
-Puis :
+- [pandoc](https://pandoc.org/installing.html) (version 3.0 ou supérieure)
+- [LaTeX](https://www.latex-project.org/get/) (distribution TeX Live ou MikTeX recommandée)
+- [pandoc-latex-environment](https://pandoc-latex-environment.readthedocs.io/en/latest/)
 
-```powershell
-pip install pandoc-latex-environment
-```
-
-## Comment utiliser le template
-
-Cloner le repo:
+L'ensemble est installable via `brew` : 
 
 ```bash
-git-clone https://github.com/fabienchevalier/maleo-dat.git
+brew install pandoc
+brew install mactex
+# pipx to install pandoc-latex-environment
+pipx install pandoc-latex-environment
 ```
 
-### Makdown
-
-Le fichier à modifier ce situe dans `src/DAT_Template.md`. En haut du document, il y a des paramètres à modifier (entre les `---`):
-
-```yaml
-# Document informations
-title: "Document d'Architecture Technique"
-author: [Prénom NOM]
-subject: "MISSION"
-date: "09-01-2023"
-keywords: [DAT, Gouvernance]
-
-#Headers titles
-header-center: "Gouvernance"
-
-#Footer titles
-footer-center: "Projet Professionnel"
-
-#Add TOC
-toc: true
-toc-title: "Sommaire"
-toc-own-page: true
-
-#Add a title page
-titlepage: true,
-titlepage-rule-height: 0
-titlepage-background: "img/bg/pages_background.pdf"
-titlepage-logo: "img/logo_infratech.png"
-```
-
-Pour afficher des petites infobulles dans le document, voir [https://github.com/Wandmalfarbe/pandoc-latex-template/raw/master/examples/boxes-with-pandoc-latex-environment-and-awesomebox/document.pdf](=>ici<=)
-
-### Lancer un export du document
-
-MacOS/Linux:
+## Génération du document
 
 ```bash
-chmod+x build.sh && ./build.sh
+chmod +x build.sh && ./build.sh
 ```
 
-Windows:
+## Edition du contenu
 
-```powershell
-./build.ps1
-```
+Modifier le fichier `src/TAD_Template.md` pour changer le contenu du document. En début de document, vous trouverez les métadonnées du document. Vous pouvez les modifier pour changer le titre, le nom de l'auteur, la date, etc.
 
-Le PDF sera situé dans le dossier `output/`
+Le contenu du document est éditable en `Markdown`, à la suite de la configuration. Vous pouvez utiliser les balises Markdown habituelles pour formater le texte, ajouter des images, des tableaux, etc.

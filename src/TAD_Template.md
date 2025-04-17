@@ -1,16 +1,16 @@
 ---
 # Document informations
 title: "Document d'Architecture Technique"
-author: [Prénom NOM]
-subject: "MISSION"
-date: "09-01-2023"
+author: AudioProthèse+
+subject: "Description de l'architecture technique de l'infrastructure hébergeant l'application AudioProthèse+"
+date: "17-04-2025"
 keywords: [DAT, Gouvernance]
 
 #Headers titles
-header-center: "Gouvernance"
+header-center: "AudioProthèse+"
 
 #Footer titles
-footer-center: "Projet Professionnel"
+footer-center: "SupDeVinci - 2025"
 
 #Add TOC
 toc: true
@@ -21,7 +21,7 @@ toc-own-page: true
 titlepage: true,
 titlepage-rule-height: 0
 titlepage-background: "img/bg/pages_background.pdf"
-titlepage-logo: "img/logo_infratech.png"
+titlepage-logo: "img/icon.jpeg"
 
 #Add special blocs by awesomebox
 header-includes:
@@ -54,14 +54,14 @@ page-background: "img/bg/pages_background.pdf"
 | Historique |         |             |                  |
 | ---------- | ------- | ----------- | ---------------- |
 | Date       | Version | Description | Auteur           |
-| 11/01/2023 | 0.1     | Création    | Fabien CHEVALIER |
+| 17/04/2025 | 0.1     | Création    | Fabien CHEVALIER |
 
 ### Objectif du document
 
-Ce document technique regroupe l’ensemble des informations concernant la **gouvernance de l’infrastructure de Maléo**. Il a pour objectif de spécifier l’ensemble des mécanismes techniques, des logiciels et des matériels qui sont mis en place dans le cadre de la gouvernance.
+Ce document technique regroupe l’ensemble des informations concernant la **l'infrastructure hébergeant l'application AudioProthèse+**. Il a pour objectif de spécifier l’ensemble des mécanismes techniques, des logiciels et des matériels qui sont mis en place dans le cadre de la livraison de la plateforme.
 
 ::: note
-L'infrastructure présentée est majoritairement déployée sur le cloud Azure, mais bénéficie d’une interconnexion avec les sites de Paris et Bruxelles permettant le monitoring des équipements réseaux présents sur site.
+L'infrastructure présentée est la version 1.0 de l'architecture technique de l'application AudioProthèse+.
 :::
 
 \newpage
