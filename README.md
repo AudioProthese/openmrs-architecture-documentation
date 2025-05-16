@@ -1,8 +1,8 @@
-<img height="96" src="./docs/img/logo.png" width="96" align="right"/>
+<img height="96" src="./docs/img/logo.jpeg" width="96" align="right"/>
 
 # Open MRS Infrastructure Wiki
 
-Full documentation is available here : https://gocert.gitlab.io/go-cert-wiki/
+Full documentation is available here : <https://audioprothese.github.io/openrms-architecture-documentation>
 
 - [Open MRS Infrastructure Wiki](#open-mrs-infrastructure-wiki)
   - [How to commit to wiki](#how-to-commit-to-wiki)
@@ -12,7 +12,7 @@ Full documentation is available here : https://gocert.gitlab.io/go-cert-wiki/
 Clone the repository, then install `mkdocs`:
 
 ```bash
-git clone git@gitlab.com:gocert/go-cert-wiki.git && cd go-cert-wiki
+git clone git@github.com:AudioProthese/openrms-architecture-documentation.git && cd openrms-architecture-documentation
 pip install mkdocs-material mkdocstrings
 ```
 
