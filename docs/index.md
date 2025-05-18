@@ -79,7 +79,7 @@ Voici le parcours conseillé pour tout nouveau collaborateur rejoignant le proje
 
 ---
 
-## 🧩 Besoin d'aide ?
+## Besoin d'aide ?
 
 Consultez la [section des contacts](annexes/contacts.md) ou contactez l’équipe en charge du projet.  
 Toute contribution à cette documentation est la bienvenue via pull request ou ticket GitHub.

@@ -7,6 +7,7 @@ Le contexte sanitaire et réglementaire (notamment RGPD et normes de protection 
 Face à ces enjeux, AudioProthèse+ souhaite moderniser et sécuriser son infrastructure informatique grâce à une approche DevOps et des technologies open source.
 
 Ce projet s’inscrit dans une démarche de transformation numérique avec un double objectif :
+
 - **Améliorer la résilience et la sécurité** de l’infrastructure IT.
 - **Automatiser et standardiser les processus de déploiement, supervision et gestion des incidents**.
 
