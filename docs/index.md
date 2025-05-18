@@ -26,9 +26,9 @@ L'ensemble des configurations sont hébergées au sein de l'organisation :fontaw
 
 - [openmrs-architecture-documentation](https://github.com/AudioProthese/openmrs-architecture-documentation) : Documentation de l'architecture technique de la plateforme AudioProthèse+.
 
-- [openmrs-technical-architecture-document](https://github.com/AudioProthese/openmrs-technical-architecture-document) : Document d'architecture technique de la plateforme AudioProthèse+.
+- [openmrs-technical-architecture-document](https://github.com/AudioProthese/openrms-technical-architecture-document) : Document d'architecture technique de la plateforme AudioProthèse+.
 
-- [openmrs-distro-referenceapplication](https://github.com/AudioProthese/openmrs-technical-architecture-document) : Code source de la distribution OpenMRS Reference Application, incluant le front/back-end de la plateforme AudioProthèse+.
+- [openmrs-distro-referenceapplication](https://github.com/AudioProthese/openmrs-distro-referenceapplication) : Code source de la distribution OpenMRS Reference Application, incluant le front/back-end de la plateforme AudioProthèse+.
 
 ## Diagramme d'architecture globale
 

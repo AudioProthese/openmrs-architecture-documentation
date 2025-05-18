@@ -1,0 +1,1 @@
+# Gestion des secrets (Vault, SOPS)
