@@ -2,7 +2,7 @@
 
 # Open MRS Infrastructure Wiki
 
-Full documentation is available here : <https://audioprothese.github.io/openrms-architecture-documentation>
+Full documentation is available here : <https://audioprothese.github.io/openmrs-architecture-documentation/>
 
 - [Open MRS Infrastructure Wiki](#open-mrs-infrastructure-wiki)
   - [How to commit to wiki](#how-to-commit-to-wiki)
