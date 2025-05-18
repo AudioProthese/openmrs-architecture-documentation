@@ -1,39 +1,87 @@
 <img height="96" src="./img/logo.jpeg" width="96" align="right"/>
 
-# Home
+# Bienvenue dans la documentation du projet DevOps – AudioProthèse+
 
-AudioProthèse+ est un réseau de centres d'audioprothèse implanté dans plusieurs villes en France, offrant des services de diagnostic, d'appareillage et de suivi pour les personnes souffrant de troubles auditifs.
+Cette documentation a été conçue pour guider les ingénieurs DevOps, administrateurs système, et toute autre personne technique impliquée dans l’exploitation, l’évolution ou la MCO de l’infrastructure AudioProthèse+.
 
-!!! info 
-    Notre proposition de solution est basée sur le logiciel Open Source [OpenMRS](https://openmrs.org/fr/), qui est un système de gestion de dossiers médicaux électroniques (DME) conçu pour les soins de santé dans les pays à revenu faible et intermédiaire.
+Vous y trouverez toutes les informations nécessaires pour :
+- Comprendre le contexte du projet
+- Déployer et maintenir l’infrastructure
+- Gérer la sécurité, l'observabilité et les incidents
+- Contribuer efficacement en tant que DevOps
 
-## Contexte
+---
 
-Cette documentation couvre l’ensemble des aspects techniques de la plateforme, notamment :
+## 🚀 Roadmap Onboarding DevOps
 
-- L’architecture globale du système
-- Les choix technologiques (Kubernetes, microservices, CI/CD, etc.)
-- Les composants principaux et leurs interactions
-- Les principes de sécurité et de haute disponibilité
-- Les stratégies de déploiement et de supervision
-- La méthode de déploiement et de mise à jour
+Voici le parcours conseillé pour tout nouveau collaborateur rejoignant le projet :
 
-## Organisation des dépôts
+---
 
-L'ensemble des configurations sont hébergées au sein de l'organisation :fontawesome-brands-github: GitHub [AudioProthèse+](https://github.com/AudioProthese) et sont organisées de la manière suivante :
+### 🔹 Étape 1 – Comprendre le projet
 
-- [openmrs-core-infrastructure](https://github.com/AudioProthese/openmrs-core-infrastructure) : Code source de l'infrastructure de base, incluant les configurations Terraform, Kubernetes ainsi que la CI/CD permettant de déployer l'ensemble de l'infrastructure.
+- 📘 [Contexte du projet](contexte.md)
+- 🎯 [Objectifs et périmètre](objectifs.md)
+- 🧠 [Architecture technique](architecture/overview.md)
 
-- [openmrs-architecture-documentation](https://github.com/AudioProthese/openmrs-architecture-documentation) : Documentation de l'architecture technique de la plateforme AudioProthèse+.
+---
 
-- [openmrs-technical-architecture-document](https://github.com/AudioProthese/openrms-technical-architecture-document) : Document d'architecture technique de la plateforme AudioProthèse+.
+### 🔹 Étape 2 – Prise en main de l’infrastructure
 
-- [openmrs-distro-referenceapplication](https://github.com/AudioProthese/openmrs-distro-referenceapplication) : Code source de la distribution OpenMRS Reference Application, incluant le front/back-end de la plateforme AudioProthèse+.
+- 🏗️ [Infrastructure as Code (IaC)](infrastructure/iac.md)
+- 🛠️ [Provisionnement Terraform](infrastructure/terraform.md)
+- ⚙️ [Configuration Ansible](infrastructure/ansible.md)
+- 🔐 [Gestion des secrets](infrastructure/secrets.md)
 
-## Diagramme d'architecture globale
+---
 
-## Construire l'infrastructure
+### 🔹 Étape 3 – Déploiement applicatif
 
-Le déploiement et la mise à jour de l'infrastructure sont réalisés à l'aide de Terraform, GitHub Actions et ArgoCD. Les process de création d'infrastructure sont détaillés dans la section [Déploiement](./Déploiement/deploiement.md).
+- 📦 [Docker & Conteneurisation](container/docker.md)
+- ☸️ [Kubernetes & Helm](container/kubernetes.md)
+- 🚀 [Stratégies de déploiement CI/CD](cicd/pipelines.md)
+- 🔄 [GitOps avec ArgoCD](cicd/gitops.md)
 
-Le détail sur les choix techniques et les outils utilisés pour la mise en place de l'infrastructure sont disponibles dans la section [Outils](./Outils/index.md).
+---
+
+### 🔹 Étape 4 – Supervision & Observabilité
+
+- 📊 [Monitoring Prometheus / Grafana](observability/monitoring.md)
+- 📄 [Centralisation des logs (Loki / ELK)](observability/logging.md)
+- 🚨 [Alerting & Tableaux de bord](observability/alerting.md)
+
+---
+
+### 🔹 Étape 5 – Sécurité & conformité
+
+- 🧪 [Scans de vulnérabilités](security/vulnerability-scans.md)
+- 🔐 [Gestion centralisée des secrets (Vault)](security/secret-management.md)
+- 👤 [Authentification (Keycloak)](security/authentication.md)
+
+---
+
+### 🔹 Étape 6 – Exploitation & MCO
+
+- 🔄 [Procédures d’exploitation](mco/procedures.md)
+- 💾 [Sauvegarde & restauration](mco/backup.md)
+- 🧯 [Gestion des incidents](mco/incidents.md)
+
+---
+
+### 🔹 Étape 7 – Contribution & collaboration
+
+- 👥 [Accès & outils de travail](onboarding/access.md)
+- 🧭 [Guide onboarding DevOps](onboarding/guide.md)
+- 📚 [Glossaire technique](onboarding/glossary.md)
+- ❓ [FAQ interne](onboarding/faq.md)
+
+---
+
+## 🧩 Besoin d'aide ?
+
+Consultez la [section des contacts](annexes/contacts.md) ou contactez l’équipe en charge du projet.  
+Toute contribution à cette documentation est la bienvenue via pull request ou ticket GitLab/GitHub.
+
+---
+
+*Documentation maintenue par l’équipe DevOps – Projet AudioProthèse+*
