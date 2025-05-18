@@ -9,36 +9,35 @@ Déployer une architecture automatisée, sécurisée et résiliente, autour d'un
 
 ## Objectifs spécifiques
 
-
-### ⚙️ Automatisation & IaC
+### Automatisation & IaC
 
 - Provisionnement de l’infrastructure via IaC.
 - Déploiement GitOps via ArgoCD, avec CI/CD GitLab.
 
-### 📦 Conteneurisation
+### Conteneurisation
 
 - Conteneurisation d’une application de santé.
 - Déploiement sur Kubernetes (avec Helm).
 - Sécurisation des images Docker et du registre privé.
 
-### 📊 Observabilité
+### Observabilité
 
 - Intégration de Prometheus + Grafana pour la supervision.
 - Centralisation des logs avec Loki.
 - Alerting et visualisation temps réel des incidents critiques.
 
-### 📈 Résilience
+### Résilience
 
 - Mise en place de sauvegardes automatiques (Velero).
 - Tests de montée en charge et de résilience.
 - Architecture scalable et haute disponibilité (autoscalers, HPA/VPA, node pools).
 
-### 🔐 Sécurité
+### Sécurité
 
 - Intégration de mécanismes de chiffrement, gestion de secrets et contrôle d'accès.
 - Déploiement de scans de vulnérabilités dans la chaîne CI/CD.
 
-### 🧑‍💻 Collaboration & documentation
+### Collaboration & documentation
 
 - Création d’une documentation technique structurée avec MkDocs.
 - Mise en place d’un wiki technique pour le transfert de compétences.
