@@ -36,3 +36,4 @@ az storage account create \
 az storage container create \
   --account-name $STORAGE_ACCOUNT \
   --name $CONTAINER_NAME
+```
