@@ -1,42 +1,103 @@
 # Initialisation dans Azure
 
-Cette page décrit les étapes nécessaires à la **mise en place initiale (bootstrap)** de l’environnement Azure pour accueillir :
+Cette page décrit les étapes nécessaires à la **mise en place initiale (bootstrap)** de l'environnement Azure pour accueillir :
 
 - Le **backend Terraform (Remote State)** dans un Storage Account
 - La **connexion OIDC sécurisée** depuis la CI (ex : GitHub Actions ou GitLab CI)
-- Les **ressources d’authentification** (groupes, rôles, permissions minimales)
+- Les **ressources d'authentification** (groupes, rôles, permissions minimales)
 
 ---
 
 ## 🎯 Objectif
 
-- Centraliser l’état Terraform (`terraform.tfstate`) dans un blob Azure sécurisé
-- Utiliser **l'authentification OIDC (Workload Identity Federation)** pour éviter l’usage de secrets
+- Centraliser l'état Terraform (`terraform.tfstate`) dans un blob Azure sécurisé
+- Utiliser **l'authentification OIDC (Workload Identity Federation)** pour éviter l'usage de secrets
 - Créer un environnement reproductible pour le provisioning IaC
 
 ---
 
-## 1. 📦 Création du Storage Account pour le backend
+## 1. 📦 Création des backends Terraform pour chaque environnement
+
+Pour chaque environnement (dev, prod), nous créons un storage account dédié pour stocker l'état Terraform:
 
 ```bash
-RESOURCE_GROUP="rg-terraform-state"
-STORAGE_ACCOUNT="stterraform$(openssl rand -hex 3)"
-CONTAINER_NAME="tfstate"
+#!/bin/bash
+set -e
 
-az group create --name $RESOURCE_GROUP --location westeurope
+create_terraform_backend() {
+    local env=$1
+    local location=$2
+    local rg_name="rg-openmrscore-${env}"
+    local sa_name="openmrscore${env}sav1"
+    local container_name="tfstate-${env}"
+    
+    echo "====== Configuration Backend Terraform pour l'environnement $env ======"
+    
+    echo "🔄 Création du Resource Group $rg_name..."
+    az group create --name "$rg_name" --location "$location" --tags "Environment=$env" "Purpose=TerraformState"
+    echo "✅ Resource Group $rg_name créé."
+    
+    echo "🔄 Création du Storage Account $sa_name..."
+    az storage account create \
+        --name "$sa_name" \
+        --resource-group "$rg_name" \
+        --location "$location" \
+        --sku "Standard_LRS" \
+        --kind "StorageV2" \
+        --https-only true \
+        --min-tls-version "TLS1_2" \
+        --tags "Environment=$env" "Purpose=TerraformState"
+    echo "✅ Storage Account $sa_name créé."
+    
+    echo "🔄 Création du Container $container_name..."
+    az storage container create \
+        --name "$container_name" \
+        --account-name "$sa_name" \
+        --auth-mode login
+    echo "✅ Container $container_name créé."
+}
 
-az storage account create \
-  --name $STORAGE_ACCOUNT \
-  --resource-group $RESOURCE_GROUP \
-  --location westeurope \
-  --sku Standard_LRS \
-  --kind StorageV2 \
-  --enable-hierarchical-namespace true
+if ! az account show > /dev/null 2>&1; then
+  echo "🔐 Vous n'êtes pas connecté à Azure CLI. Connexion..."
+  az login
+else
+  echo "✅ Déjà connecté à Azure CLI."
+fi
 
-az storage container create \
-  --account-name $STORAGE_ACCOUNT \
-  --name $CONTAINER_NAME
+LOCATION="francecentral"
+
+echo -e "\n🏗️  CRÉATION DES BACKENDS TERRAFORM"
+DEV_BACKEND=$(create_terraform_backend "dev" "$LOCATION")
+PROD_BACKEND=$(create_terraform_backend "prod" "$LOCATION")
 ```
+
+### Configuration des backends dans Terraform
+
+Une fois les backends créés, nous pouvons les référencer dans notre configuration Terraform:
+
+```hcl
+# Pour l'environnement de développement
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-openmrscore-dev"
+    storage_account_name = "openmrscoredevsav1"
+    container_name       = "tfstate-dev"
+    key                  = "dev.tfstate"
+  }
+}
+
+# Pour l'environnement de production
+terraform {
+  backend "azurerm" {
+    resource_group_name  = "rg-openmrscore-prod"
+    storage_account_name = "openmrscoreprodsa"
+    container_name       = "tfstate-prod"
+    key                  = "prod.tfstate"
+  }
+}
+```
+
+> **Note**: L'authentification avec OIDC sera gérée par GitHub Actions lors de l'exécution des workflows CI/CD, et non dans la configuration Terraform elle-même.
 
 ## 2. 🔐 Configuration de la connexion OIDC sécurisée
 
