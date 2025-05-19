@@ -11,7 +11,7 @@ Ce projet s’inscrit dans une démarche de transformation numérique avec un do
 - **Améliorer la résilience et la sécurité** de l’infrastructure IT.
 - **Automatiser et standardiser les processus de déploiement, supervision et gestion des incidents**.
 
-L’infrastructure visée repose sur une hybridation entre environnement on-premise existant et ressources cloud (Azure), tout en assurant une observabilité complète, un monitoring proactif, et une capacité de réaction rapide aux incidents.
+L’infrastructure visée repose sur une hybridation entre environnement on-premise existant et ressources cloud, tout en assurant une observabilité complète, un monitoring proactif, et une capacité de réaction rapide aux incidents.
 
 ---
 

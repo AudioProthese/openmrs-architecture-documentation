@@ -1,4 +1,4 @@
-# Initialisation de l'environnement Azure
+# Initialisation dans Azure
 
 Cette page décrit les étapes nécessaires à la **mise en place initiale (bootstrap)** de l’environnement Azure pour accueillir :
 

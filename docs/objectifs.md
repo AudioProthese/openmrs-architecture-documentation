@@ -4,33 +4,30 @@
 
 Déployer une architecture automatisée, sécurisée et résiliente, autour d'une application de santé conteneurisée, avec supervision, CI/CD, et documentation complète à destination des équipes internes.
 
-!!! info 
-    Notre proposition de solution est basée sur le logiciel Open Source [OpenMRS](https://openmrs.org/fr/), qui est un système de gestion de dossiers médicaux électroniques (DME) conçu pour les soins de santé dans les pays à revenu faible et intermédiaire.
-
 ## Objectifs spécifiques
 
 ### Automatisation & IaC
 
 - Provisionnement de l’infrastructure via IaC.
-- Déploiement GitOps via ArgoCD, avec CI/CD GitLab.
+- Déploiement via pipeline CI/CD et workflow GitOps.
 
 ### Conteneurisation
 
 - Conteneurisation d’une application de santé.
-- Déploiement sur Kubernetes (avec Helm).
+- Déploiement sur Kubernetes.
 - Sécurisation des images Docker et du registre privé.
 
 ### Observabilité
 
-- Intégration de Prometheus + Grafana pour la supervision.
-- Centralisation des logs avec Loki.
-- Alerting et visualisation temps réel des incidents critiques.
+- Intégration d'une solution de supervision.
+- Centralisation des logs.
+- Alerting et visualisation temps réel des incidents.
 
 ### Résilience
 
-- Mise en place de sauvegardes automatiques (Velero).
+- Mise en place de sauvegardes automatiques.
 - Tests de montée en charge et de résilience.
-- Architecture scalable et haute disponibilité (autoscalers, HPA/VPA, node pools).
+- Architecture scalable et haute disponibilité.
 
 ### Sécurité
 
@@ -39,7 +36,7 @@ Déployer une architecture automatisée, sécurisée et résiliente, autour d'un
 
 ### Collaboration & documentation
 
-- Création d’une documentation technique structurée avec MkDocs.
+- Création d’une documentation technique structurée.
 - Mise en place d’un wiki technique pour le transfert de compétences.
 - Procédures d’exploitation, onboarding, et MCO rédigées.
 
