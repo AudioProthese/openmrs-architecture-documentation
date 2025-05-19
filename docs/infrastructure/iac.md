@@ -48,7 +48,7 @@ Le `terraform.tfstate` est stocké dans un **Azure Storage Account par environne
 terraform {
   backend "azurerm" {
     resource_group_name  = "rg-openmrscore-<env>"
-    storage_account_name = "openmrscore<env>v1"
+    storage_account_name = "openmrscore<env>sav1"
     container_name       = "tfstate-<env>"
     key                  = "<env>.tfstate"
   }

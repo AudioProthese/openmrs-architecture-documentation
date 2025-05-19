@@ -4,7 +4,6 @@ Cette page décrit les étapes nécessaires à la **mise en place initiale (boot
 
 - Le **backend Terraform (Remote State)** dans un Storage Account
 - La **connexion OIDC sécurisée** depuis la CI (ex : GitHub Actions ou GitLab CI)
-- Les **ressources d'authentification** (groupes, rôles, permissions minimales)
 
 ---
 
@@ -90,7 +89,7 @@ terraform {
 terraform {
   backend "azurerm" {
     resource_group_name  = "rg-openmrscore-prod"
-    storage_account_name = "openmrscoreprodsa"
+    storage_account_name = "openmrscoreprodsav1"
     container_name       = "tfstate-prod"
     key                  = "prod.tfstate"
   }
