@@ -23,7 +23,7 @@ terraform/
     ├── acr.tf               # Azure Container Registry
     ├── data.tf              # Data sources
     ├── dns.tf               # DNS Azure
-    ├── helm.tf               # Helm charts
+    ├── helm.tf              # Helm charts
     ├── identity.tf          # Identity: Federation & rôle OIDC
     ├── manifests.tf         # Manifests Kubernetes
     ├── outputs.tf           # Export des variables utiles

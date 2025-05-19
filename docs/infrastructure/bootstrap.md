@@ -3,11 +3,11 @@
 Cette page décrit les étapes nécessaires à la **mise en place initiale (bootstrap)** de l'environnement Azure pour accueillir :
 
 - Le **backend Terraform (Remote State)** dans un Storage Account
-- La **connexion OIDC sécurisée** depuis la CI (ex : GitHub Actions ou GitLab CI)
+- La **connexion OIDC sécurisée** depuis la CI
 
 ---
 
-## 🎯 Objectif
+## Objectif
 
 - Centraliser l'état Terraform (`terraform.tfstate`) dans un blob Azure sécurisé
 - Utiliser **l'authentification OIDC (Workload Identity Federation)** pour éviter l'usage de secrets
@@ -15,7 +15,7 @@ Cette page décrit les étapes nécessaires à la **mise en place initiale (boot
 
 ---
 
-## 1. 📦 Création des backends Terraform pour chaque environnement
+## Création des backends Terraform pour chaque environnement
 
 Pour chaque environnement (dev, prod), nous créons un storage account dédié pour stocker l'état Terraform:
 
@@ -98,7 +98,7 @@ terraform {
 
 > **Note**: L'authentification avec OIDC sera gérée par GitHub Actions lors de l'exécution des workflows CI/CD, et non dans la configuration Terraform elle-même.
 
-## 2. 🔐 Configuration de la connexion OIDC sécurisée
+## Configuration de la connexion OIDC sécurisée
 
 L'authentification OIDC (OpenID Connect) permet à GitHub Actions d'accéder à Azure sans stocker de secrets dans le dépôt.
 Pour notre architecture, nous configurons deux connexions OIDC distinctes:
@@ -200,6 +200,10 @@ L'utilisation de la fédération d'identité (OIDC) avec GitHub Actions et Azure
 - **Réduction des risques** : Minimise l'impact potentiel en cas de compromission du référentiel
 
 
-## 📚 Ressources additionnelles
+## Liens utiles
 
 - [Documentation Azure sur l'authentification OIDC pour GitHub Actions](https://docs.microsoft.com/en-us/azure/developer/github/connect-from-azure)
+
+---
+
+*Documentation maintenue par l’équipe DevOps – Projet AudioProthèse+*
