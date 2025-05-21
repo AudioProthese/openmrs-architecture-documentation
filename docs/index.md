@@ -32,15 +32,14 @@ Voici le parcours conseillé pour tout nouveau collaborateur rejoignant le proje
 - 🏗️ [Infrastructure as Code](infrastructure/iac.md)
 - ☁️ [Bootstrap Azure](infrastructure/bootstrap.md)
 - 🛠️ [Provisionnement Terraform](infrastructure/terraform.md)
-- 🔐 [Gestion des secrets](infrastructure/secrets.md)
 
 ---
 
 ### 🔹 Déploiement applicatif
 
-- 📦 [Docker & Conteneurisation](container/docker.md)
-- 🗄️ [Registre privé](container/registry.md)
-- ☸️ [Kubernetes & Helm](container/kubernetes.md)
+- 📦 [Docker & Conteneurisation](conteneur/docker.md)
+- 🗄️ [Registre privé](conteneur/registry.md)
+- ☸️ [Kubernetes & Helm](conteneur/kubernetes.md)
 - 🚀 [Stratégies de déploiement CI/CD](cicd/pipelines.md)
 - 🔄 [GitOps avec ArgoCD](cicd/gitops.md)
 
@@ -48,17 +47,17 @@ Voici le parcours conseillé pour tout nouveau collaborateur rejoignant le proje
 
 ### 🔹 Supervision & Observabilité
 
-- 📊 [Monitoring](observability/monitoring.md)
-- 📄 [Centralisation des logs](observability/logging.md)
-- 🚨 [Alerting & Tableaux de bord](observability/alerting.md)
+- 📊 [Monitoring](observabilité/monitoring.md)
+- 📄 [Centralisation des logs](observabilité/logging.md)
+- 🚨 [Alerting & Tableaux de bord](observabilité/alerting.md)
 
 ---
 
 ### 🔹 Sécurité & conformité
 
-- 🧪 [Scans de vulnérabilités](security/vulnerability-scans.md)
-- 🔐 [Gestion centralisée des secrets](security/secret-management.md)
-- 👤 [Authentification](security/authentication.md)
+- 🧪 [Scans de vulnérabilités](sécurité/vulnerability-scans.md)
+- 🔐 [Gestion centralisée des secrets](sécurité/secret-management.md)
+- 👤 [Authentification](sécurité/authentication.md)
 
 ---
 
