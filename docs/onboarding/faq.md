@@ -3,6 +3,7 @@
 ## Quel est le périmètre de la mission DevOps ?
 
 Le périmètre couvre :
+
 - La mise en place d'une infrastructure Cloud Azure managée via Terraform
 - Le déploiement et l’automatisation d’un cluster AKS avec CI/CD
 - L'intégration d'une solution de supervision complète (Prometheus, Grafana, Alertmanager)
@@ -14,10 +15,12 @@ Le périmètre couvre :
 ## Quels environnements sont gérés ?
 
 Deux environnements sont définis :
+
 - **dev** : pour les tests, développements et itérations fréquentes
 - **prod** : pour les mises en production validées et stables
 
 Chaque environnement possède :
+
 - Son propre backend Terraform (Storage Account isolé)
 - Son propre cluster AKS
 - Des secrets, rôles et configurations spécifiques
@@ -43,6 +46,7 @@ Cela évite de stocker des secrets dans les workflows et repose sur des identit�
 ## Où sont stockés les états Terraform ?
 
 Les fichiers `terraform.tfstate` sont stockés dans des **Azure Storage Accounts**, un par environnement :
+
 - Container `tfstate-dev` pour dev
 - Container `tfstate-prod` pour prod
 
@@ -60,6 +64,7 @@ Les alertes sont gérées par Alertmanager, et envoyées vers Telegram.
 ## Comment contribuer ou modifier l'infrastructure ?
 
 Les modifications doivent être faites via :
+
 - Des branches Git suivies de Pull Requests
 - L’exécution des pipelines GitHub Actions (lint, plan, apply)
 - Respect des bonnes pratiques de versioning et de validation manuelle avant `terraform apply`
